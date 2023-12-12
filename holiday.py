@@ -1,3 +1,4 @@
+# Function for the selection of cities available
 def cities():
     print("Available return flights:")
     print("Paris--- £25.00")
@@ -6,40 +7,35 @@ def cities():
     print("Hel--- £66.60")
     print("Secret offer--- £10.00")
 
-cities()
+# Call Cities function
+cities() 
+
+# Input a city name and reformat, capital first letter only
 city_flight = input("Select a city from the list to fly to: ").capitalize()
 
-valid_cities = ["Paris", "Madrid", "Budapest", "Hel"]
-
-if city_flight not in valid_cities:
+# Check for correct city names, or secret offer
+city_check = ["Paris", "Madrid", "Budapest", "Hel"]
+if city_flight not in city_check:
     print("Well done! You are entered into the random flight generator for just £10.00!")
 
-num_nights = input("Enter the number of nights you wish to stay: ")
-rental_days = input("Enter the number of days you need to rent a car: ")
-
-try:
-    num_nights = int(num_nights)
-except ValueError:
+# function to ensure the number of nights entered is a number
+def number_check(x):
     while True:
         try:
-            num_nights = int(input("Please enter a valid number for the number of nights you wish to stay: "))
-            break  
+            value = int(input(x))
+            return value
         except ValueError:
             print("Please enter a valid number.")
 
-try:
-    rental_days = int(rental_days)
-except ValueError:
-    while True:
-        try:
-            rental_days = int(input("Please enter a valid number for the number of days you need to rent a car: "))
-            break  
-        except ValueError:
-            print("Please enter a valid number.")
+#inputs and check using number check functions for the number of nights for hotel and number of days for car hire
+num_nights = number_check("Please enter the number of nights you wish to stay: ")
+rental_days = number_check("Please enter the number of days you need to rent a car: ")
 
+# function for hotel cost calculation
 def hotel_cost(num_nights):
     return num_nights * 50
 
+# function for plane cost calculation
 def plane_cost(city_flight):
     if city_flight == "Paris":
         return 25.00
@@ -52,13 +48,15 @@ def plane_cost(city_flight):
     else:
         return 10.00
 
+# function for car rental cost calculation
 def car_rental(rental_days):
     return rental_days * 15
     
-
+# total holiday cost using other costing functions
 holiday_cost = hotel_cost(num_nights) + plane_cost(city_flight) + car_rental(rental_days)
 print(holiday_cost)
 
+#Print out all info in easy to read format
 print("\n---Summary of holiday---")
 print(f"\n    -Flights-\nPrice for flight to {city_flight}: \n£{plane_cost(city_flight):.2f}")
 print(f"\n     -Hotel-\nPrice for {num_nights} nights: \n£{hotel_cost(num_nights):.2f}")
