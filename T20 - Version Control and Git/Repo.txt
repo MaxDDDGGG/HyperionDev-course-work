@@ -1,0 +1,8 @@
+Edited T04 - Logical programming - Operators: awards.py
+Repo: https://github.com/MaxDDDGGG/HyperionDev-course-work/tree/main
+Commits: https://github.com/MaxDDDGGG/HyperionDev-course-work/commit/bfdd3ffa23d4ea29af95115251b4a83acd2a5dc9
+Addtitional comments: branch name was too complex.
+
+Edited T15 - IO Operations - Output: Student_register
+https://github.com/MaxDDDGGG/HyperionDev-course-work/tree/main
+Commits: https://github.com/MaxDDDGGG/HyperionDev-course-work/commit/12e36103737816fc2f915538d78b0515bf88d22f
